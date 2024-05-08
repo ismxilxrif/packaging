@@ -354,7 +354,7 @@ docker-targets:
       zlib
       fontconfig
       freetype2
-      libjpeg
+      libjpeg-turbo
       libpng
       libxext
       libxrender
