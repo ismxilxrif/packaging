@@ -1,4 +1,4 @@
-name: release
+name: release-jammy
 on:
   workflow_dispatch:
     inputs:
