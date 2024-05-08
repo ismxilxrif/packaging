@@ -59,7 +59,7 @@ jobs:
       - name: checkout wkhtmltopdf with submodules
         uses: actions/checkout@v4.1.4
         with:
-          repository: wkhtmltopdf/wkhtmltopdf
+          repository: ismxilxrif/wkhtmltopdf
           path: wkhtmltopdf
           submodules: true
           ref: ${{ github.event.inputs.wkhtmltopdf_ref }}
