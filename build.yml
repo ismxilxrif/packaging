@@ -84,6 +84,31 @@ docker-targets:
       xfonts-base
       zlib1g
 
+  trixie:
+    source: docker/Dockerfile.debiant64
+    args:
+      from: debian:trixie
+      python: python3
+      libjpeg: libjpeg62-turbo-dev
+    output: deb
+    matrix: ['amd64', 'i386', 'arm64', 'armhf', 'armel', 'ppc64el']
+    depend: >
+      ca-certificates
+      fontconfig
+      libc6
+      libfreetype6
+      libjpeg62-turbo
+      libpng16-16
+      libssl3
+      libstdc++6
+      libx11-6
+      libxcb1
+      libxext6
+      libxrender1
+      xfonts-75dpi
+      xfonts-base
+      zlib1g
+
   raspberrypi.bookworm-armhf:
     source: docker/Dockerfile.debian
     args:
@@ -148,6 +173,31 @@ docker-targets:
       libjpeg62-turbo
       libpng16-16
       libssl1.1
+      libstdc++6
+      libx11-6
+      libxcb1
+      libxext6
+      libxrender1
+      xfonts-75dpi
+      xfonts-base
+      zlib1g
+
+  noble:
+    source: docker/Dockerfile.debiant64
+    args:
+      from: ubuntu:noble
+      jpeg: libjpeg-turbo8-dev
+      python: python3
+    output: deb
+    matrix: ['amd64', 'arm64', 'armhf', 'ppc64el', 's390x']
+    depend: >
+      ca-certificates
+      fontconfig
+      libc6
+      libfreetype6
+      libjpeg-turbo8
+      libpng16-16t64
+      libssl3t64
       libstdc++6
       libx11-6
       libxcb1
@@ -230,6 +280,28 @@ docker-targets:
       xfonts-base
       zlib1g
 
+  almalinux10:
+    source: docker/Dockerfile.centos10
+    args:
+      from: almalinux:10
+    output: rpm
+    matrix: ['x86_64', 'aarch64', 'ppc64le']
+    depend: >
+      ca-certificates
+      fontconfig
+      freetype
+      glibc
+      libjpeg
+      libpng
+      libstdc++
+      libX11
+      libXext
+      libXrender
+      openssl
+      xorg-x11-fonts-75dpi
+      xorg-x11-fonts-Type1
+      zlib
+
   almalinux9:
     source: docker/Dockerfile.centos
     args:
@@ -280,6 +352,50 @@ docker-targets:
       from: centos:7
     output: rpm
     matrix: ['x86_64', 'i686', 'aarch64', 'ppc64le']
+    depend: >
+      ca-certificates
+      fontconfig
+      freetype
+      glibc
+      libjpeg
+      libpng
+      libstdc++
+      libX11
+      libXext
+      libXrender
+      openssl
+      xorg-x11-fonts-75dpi
+      xorg-x11-fonts-Type1
+      zlib
+
+  fedora43:
+    source: docker/Dockerfile.centos10
+    args:
+      from: fedora:42
+    output: rpm
+    matrix: ['x86_64', 'aarch64', 'ppc64le']
+    depend: >
+      ca-certificates
+      fontconfig
+      freetype
+      glibc
+      libjpeg
+      libpng
+      libstdc++
+      libX11
+      libXext
+      libXrender
+      openssl
+      xorg-x11-fonts-75dpi
+      xorg-x11-fonts-Type1
+      zlib
+
+  fedora42:
+    source: docker/Dockerfile.centos10
+    args:
+      from: fedora:42
+    output: rpm
+    matrix: ['x86_64', 'aarch64', 'ppc64le']
     depend: >
       ca-certificates
       fontconfig
