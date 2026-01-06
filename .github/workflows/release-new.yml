@@ -19,22 +19,52 @@ jobs:
     strategy:
       matrix:
         package_target:
-          - noble-amd64
-          - noble-arm64
-          - noble-ppc64el
           - trixie-amd64
           - trixie-arm64
           - trixie-ppc64el
+          - bookworm-amd64
+          - bookworm-arm64
+          - bookworm-i386
+          - bookworm-ppc64el
+          - bullseye-amd64
+          - bullseye-arm64
+          - bullseye-i386
+          - bullseye-ppc64el
+          - buster-amd64
+          - buster-arm64
+          - buster-i386
+          - buster-ppc64el
+          - noble-amd64
+          - noble-arm64
+          - noble-ppc64el
+          - jammy-amd64
+          - jammy-arm64
+          - jammy-ppc64el
+          - focal-amd64
+          - focal-arm64
+          - focal-ppc64el
+          - bionic-amd64
+          - bionic-arm64
+          - bionic-ppc64el
           - archlinux-amd64
           - almalinux10-x86_64
           - almalinux10-aarch64
           - almalinux10-ppc64le
-          - fedora42-x86_64
-          - fedora42-aarch64
-          - fedora42-ppc64le
+          - almalinux9-aarch64
+          - almalinux9-ppc64le
+          - almalinux9-x86_64
+          - almalinux8-aarch64
+          - almalinux8-ppc64le
+          - almalinux8-x86_64
           - fedora43-x86_64
           - fedora43-aarch64
           - fedora43-ppc64le
+          - fedora42-x86_64
+          - fedora42-aarch64
+          - fedora42-ppc64le
+          - raspberrypi.bookworm-armhf
+          - raspberrypi.bullseye-armhf
+
       fail-fast: false
     steps:
       - name: configure docker
